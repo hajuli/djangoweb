@@ -25,6 +25,12 @@ home
 			<a href = "http://code.google.com/intl/zh-CN/appengine/" title="appengine" target="_blank">Google appengine</a>&nbsp;
 		</td>
 	</tr>
+	
+	<tr>
+		{%for fff in fvs%}
+		<td>{{fff.label_name}}</td>
+		{%endfor%}
+	</tr>
 	<tr>
 	<td><img src="/site-media/images/dingqilai.jpg" alt="ding" title="titletext" /></td>
 	</tr>

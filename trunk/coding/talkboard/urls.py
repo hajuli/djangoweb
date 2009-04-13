@@ -19,5 +19,7 @@ urlpatterns = patterns('',
     (r'^site-media/(.*)$', 'django.views.static.serve', {'document_root': 'media'}),
 
     #(r'^log/', include('web.log.URLconf')),
+    (r'^favorites/add', 'favorites.views.index'),
+    (r'^favorites/save', 'favorites.views.save_favorites'),
     (r'^$', 'home.views.index'),
 )
