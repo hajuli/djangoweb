@@ -17,10 +17,15 @@ def get_all_favorites():
     try:
         fvs = db.GqlQuery("SELECT * "
                                 "FROM Favorite "
-                                "ORDER BY date DESC LIMIT 100")
+                                "ORDER BY label_name DESC LIMIT 100")
     except :
         print "gqlQuery exception"
     return fvs
 
 
-    
+def delele_favorites(label_name):
+    fvs = get_all_favorites()
+    for fv in fvs:
+        if (label_name == fv.label_name):
+            db.delete(fv)
+    pass

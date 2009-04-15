@@ -21,5 +21,6 @@ urlpatterns = patterns('',
     #(r'^log/', include('web.log.URLconf')),
     (r'^favorites/add', 'favorites.views.index'),
     (r'^favorites/save', 'favorites.views.save_favorites'),
+    (r'^favorites/delete', 'favorites.views.delete_favorites'),
     (r'^$', 'home.views.index'),
 )
