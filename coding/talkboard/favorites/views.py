@@ -31,13 +31,13 @@ def save_favorites(request):
     favorite.label_name = request.POST.get('label_name', "null").decode("utf-8")
     favorite.url_path = request.POST.get('url_path', "null").decode("utf-8")
     favorite.put()
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/favorite/')
 
 def delete_favorites(request):
     label_name = request.GET.get('label_name', "").decode("utf-8")
     if label_name:
         fvs_md.delele_favorites(label_name)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect('/favorite/')
 
 def main():
     pass

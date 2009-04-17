@@ -16,11 +16,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # (r'^admin/(.*)', admin.site.root),
-    (r'^site-media/(.*)$', 'django.views.static.serve', {'document_root': 'media'}),
+    (r'^favorite/site-media/(.*)$', 'django.views.static.serve', {'document_root': 'media'}),
 
     #(r'^log/', include('web.log.URLconf')),
-    (r'^favorites/add', 'favorites.views.index'),
-    (r'^favorites/save', 'favorites.views.save_favorites'),
-    (r'^favorites/delete', 'favorites.views.delete_favorites'),
-    (r'^$', 'home.views.index'),
+    (r'^favorite/favorites/add', 'favorites.views.index'),
+    (r'^favorite/favorites/save', 'favorites.views.save_favorites'),
+    (r'^favorite/favorites/delete', 'favorites.views.delete_favorites'),
+    (r'^favorite/$', 'home.views.index'),
 )

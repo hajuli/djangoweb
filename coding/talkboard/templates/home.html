@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block ext_js_head_inc %}
-<script language="javascript" src="/site-media/script/window_popup.js"></script>
+<script language="javascript" src="/favorite/site-media/script/window_popup.js"></script>
 {% endblock %}
 
 {% block ext_js_head %}
@@ -36,7 +36,7 @@
 		//document.body.innerHTML   +=   event.keyCode   + "：离开了 <br   \/>";
 		if ("" != g_mouse_on)
 		{
-			var url_del = "/favorites/delete?label_name=" + g_mouse_on;
+			var url_del = "/favorite/favorites/delete?label_name=" + g_mouse_on;
 			//alert(url_del);
 			document.URL= url_del;
 			//window.open(url_del, "newwindow");
@@ -69,10 +69,10 @@
 		</td>
 	</tr>
 	<tr><td align="center">
-		<table style="width:850px;">
+		<table style="width:840px;">
 			<tr align="left">
 				{%for d_i in datas%}
-					<td align="left" style="width:170px;">
+					<td align="left" style="width:140px;">
 						<a href="{{d_i.value.url_path}}" target="_blank" 
 							onMouseOver="on_mouse_over_href('{{d_i.value.label_name}}');" 
 							 onMouseOut="on_mouse_out_href();" >{{d_i.value.label_name}}</a>
@@ -85,11 +85,11 @@
 		</table>
 	</td></tr>
 	<tr align="center">
-		<td><img src="/site-media/images/dingqilai.jpg" alt="ding" title="titletext" /></td>
+		<td><img src="/favorite/site-media/images/dingqilai.jpg" alt="ding" title="titletext" /></td>
 	</tr>
 	<tr align="center">
 		<td >
-		<input type="button" value="添加超链" onclick="add_favorites('/favorites/add/')"/>
+		<input type="button" value="添加超链" onclick="add_favorites('/favorite/favorites/add/')"/>
 		</td>
 	</tr>
 	<tr><td>&nbsp;</td></tr>
