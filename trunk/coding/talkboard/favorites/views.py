@@ -28,13 +28,13 @@ def index(request):
 
 def save_favorites(request):
     favorite = fvs_md.Favorite()
-    favorite.label_name = request.POST.get('label_name', "null")
-    favorite.url_path = request.POST.get('url_path', "null")
+    favorite.label_name = request.POST.get('label_name', "null").decode("utf-8")
+    favorite.url_path = request.POST.get('url_path', "null").decode("utf-8")
     favorite.put()
     return HttpResponseRedirect('/')
 
 def delete_favorites(request):
-    label_name = request.GET.get('label_name', "")
+    label_name = request.GET.get('label_name', "").decode("utf-8")
     if label_name:
         fvs_md.delele_favorites(label_name)
     return HttpResponseRedirect('/')
