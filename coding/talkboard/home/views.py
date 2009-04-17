@@ -6,11 +6,20 @@ from favorites import models as models_fv
 def index(request):
     fvs = models_fv.get_all_favorites()
     datas = []
-    i = 0
-    for xx in fvs:
+    i = fvs.count() - 1
+    co = 0
+    while i >= 0:
         e = {}
-        e["index"] = unicode(i % 6)
-        e["value"] = xx
+        e["index"] = unicode(co % 6)
+        e["value"] = fvs[i]
         datas.append(e)
-        i += 1
+        # print co, e['value'].label_name
+        i -= 1
+        co += 1
     return render_to_response("home.html", {"datas": datas})
+
+def main():
+    index("xx")
+    
+if "__main__" == __name__:
+    main()
