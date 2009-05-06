@@ -22,5 +22,6 @@ urlpatterns = patterns('',
     (r'^favorite/favorites/add', 'favorites.views.index'),
     (r'^favorite/favorites/save', 'favorites.views.save_favorites'),
     (r'^favorite/favorites/delete', 'favorites.views.delete_favorites'),
+    (r'^favorite/users_mgr/sign_in', 'users_mgr.views.sign_in'),
     (r'^favorite/$', 'home.views.index'),
 )

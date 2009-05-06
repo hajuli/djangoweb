@@ -16,7 +16,7 @@ indexes:
   - name: date
     direction: desc
 
-# Used 952 times in query history.
+# Used 984 times in query history.
 - kind: Favorite
   properties:
   - name: label_name
