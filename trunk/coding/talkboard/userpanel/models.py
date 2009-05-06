@@ -10,10 +10,10 @@ from django.contrib import admin
 #收藏
 class UserProfile(models.Model):
     user = models.ForeignKey(User, unique=True)
-    avatar = models.CharField(max_length=255, blank=True)
+    avatar = models.CharField(maxlength=255, blank=True)
     gender = models.CharField('性别',\
         choices=(('', '保密'), ('M', '男'), ('F', '女')),
-        max_length=1, blank=True)
+        maxlength=1, blank=True)
     blog = models.URLField(blank=True)
     intro = models.TextField(blank=True)
     photo_count=models.IntegerField(default=0)

@@ -6,20 +6,20 @@ from django.utils.translation import gettext as _
 from talkboard.utils.ImageUtils import checkImage
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length=40, widget=forms.widgets.TextInput(\
+    username = forms.CharField(maxlength=40, widget=forms.widgets.TextInput(\
         attrs={'style':'width: 10em;'}), label='登录名')
-    password = forms.CharField(max_length=40, widget=forms.widgets.PasswordInput(\
+    password = forms.CharField(maxlength=40, widget=forms.widgets.PasswordInput(\
         attrs={'style':'width: 10em;'}), label='密码')
 
 
 class UpdatePswdForm(forms.Form):
-    old_pswd = forms.CharField(max_length=40,\
+    old_pswd = forms.CharField(maxlength=40,\
         widget=forms.widgets.PasswordInput(\
         attrs={'style':'width: 10em;'}), label='原始密码')
-    new_pswd = forms.CharField(max_length=40,\
+    new_pswd = forms.CharField(maxlength=40,\
         widget=forms.widgets.PasswordInput(\
         attrs={'style':'width: 10em;'}), label='新密码')
-    r_pswd = forms.CharField(max_length=40,\
+    r_pswd = forms.CharField(maxlength=40,\
         widget=forms.widgets.PasswordInput(\
         attrs={'style':'width: 10em;'}), label='新密码')
 
@@ -44,12 +44,12 @@ class UpdatePswdForm(forms.Form):
         raise forms.ValidationError(_('两次输入的密码不一致'))
 
 class SignupForm(forms.Form):
-    username = forms.CharField(max_length=40, widget=forms.widgets.TextInput(\
+    username = forms.CharField(maxlength=40, widget=forms.widgets.TextInput(\
         attrs={'style':'width: 10em; color:red'}), label='登录名')
-    password = forms.CharField(max_length=40,\
+    password = forms.CharField(maxlength=40,\
         widget=forms.widgets.PasswordInput(attrs={'style':'width: 10em;'}),\
         label='密码')
-    rpassword = forms.CharField(max_length=40,\
+    rpassword = forms.CharField(maxlength=40,\
         widget=forms.widgets.PasswordInput(attrs={'style':'width: 10em;'}),\
         label='确认密码')
 
@@ -82,10 +82,10 @@ class SignupForm(forms.Form):
                             password=self.cleaned_data['password']) 
 
 class EditForm(forms.Form):
-    gender = forms.CharField(max_length=200, widget=forms.widgets.Select(\
+    gender = forms.CharField(maxlength=200, widget=forms.widgets.Select(\
         choices=(('', '保密'), ('M', '男'), ('F', '女')),\
         ), label='性别', required=False)
-    blog = forms.URLField(max_length=200,\
+    blog = forms.URLField(maxlength=200,\
         widget=forms.widgets.TextInput(attrs={'style':'width: 21em;'}),\
         label='Blog', required=False)
     intro = forms.CharField(\
