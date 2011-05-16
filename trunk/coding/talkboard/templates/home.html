@@ -34,7 +34,7 @@
 	}
 	document.onkeyup = function(){ 
 		//document.body.innerHTML   +=   event.keyCode   + "：离开了 <br   \/>";
-		if ("" != g_mouse_on)
+		if ("" != g_mouse_on && 46 == event.keyCode)	// for del.
 		{
 			var url_del = "/favorite/favorites/delete?label_name=" + g_mouse_on;
 			//alert(url_del);
