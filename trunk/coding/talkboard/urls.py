@@ -24,4 +24,5 @@ urlpatterns = patterns('',
     (r'^favorite/favorites/delete', 'favorites.views.delete_favorites'),
     (r'^favorite/userpanel/', include('userpanel.URLconf')),
     (r'^favorite/$', 'home.views.index'),
+    (r'^$', 'home.views.index'),
 )
