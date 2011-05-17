@@ -10,13 +10,12 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-# Used 81 times in query history.
+
 - kind: Favorite
   properties:
-  - name: date
+  - name: deleted
     direction: desc
 
-# Used 1160 times in query history.
 - kind: Favorite
   properties:
   - name: label_name

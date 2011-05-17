@@ -32,6 +32,11 @@
 		//alert(g_mouse_on);
 		g_mouse_on = "";
 	}
+	function on_click_label(label_name, url_link)
+	{
+		//alert(url_link);
+		//window.open(url_link, "newwindow");
+	}
 	document.onkeyup = function(){ 
 		//document.body.innerHTML   +=   event.keyCode   + "：离开了 <br   \/>";
 		if ("" != g_mouse_on && 46 == event.keyCode)	// for del.
@@ -75,7 +80,8 @@
 					<td align="left" style="width:140px;">
 						<a href="{{d_i.value.url_path}}" target="_blank" 
 							onMouseOver="on_mouse_over_href('{{d_i.value.label_name}}');" 
-							 onMouseOut="on_mouse_out_href();" >{{d_i.value.label_name}}</a>
+							 onMouseOut="on_mouse_out_href();"  
+							 onclick="on_click_label('{{d_i.value.label_name}}', '{{d_i.value.url_path}}');" >{{d_i.value.label_name}}</a>
 					</td>
 					{%ifequal "5" d_i.index %}
 						</tr><tr align="left">
