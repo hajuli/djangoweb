@@ -1,0 +1,89 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="position: static;" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    {% block head_ext %}
+    {% endblock %}
+    {% block meta_ext %}
+    {% endblock %}
+    <title>
+	    {% block title %}
+	    hajuli - {% block title_descn %}岁月无情{% endblock %}
+	    {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="/favorite/site-media/css/menu_style.css">
+    {% block ext_js_head_inc %}
+    {% endblock %}
+    <style>
+    {% block ext_style %}
+    {% endblock %}
+    </style>
+    <script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-7510894-5");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+    <script language="javascript">
+    <!--
+    {% block ext_js_head %}{% endblock %}
+    -->
+    </script>
+</head>
+<body>
+<center>
+<table width="1000px" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="/favorite/site-media/images/lun_img.gif">
+    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0" >
+      <tr>
+        <td width="244px" rowspan="2"></td>
+        <td width="756px" height="80">&nbsp;</td>
+      </tr>
+      <tr  style="display:none">
+        <td align="left">
+          <ul id="navmenu-h">
+	        
+	        <li><a href="#">开发人员</a>
+	          <ul>
+	            <li><a href="http://blog.csdn.net/kiki113" target="_blank">黄444</a></li>
+                <li><a href="#">王3</a></li>
+                <li><a href="#">于23</a></li>
+                <li><a href="http://hi.baidu.com/momoxiangni/" title="伤心小子" target="_blank">李666</a></li>
+	          </ul>
+	        </li>
+	        <li><a id="menu3-toggle" href="http://code.google.com/p/walle/" target="_blank" title="walle项目首页">walle官网</a></li>
+	      </ul>
+		</td>
+      </tr>
+    </table></td>
+  </tr> 
+  <tr bgcolor="(#9c6eff">
+    <td class="table_border" align="center" valign="top">
+      <div id="container">
+	     {% block main %}
+         {% endblock %}
+      </div>
+	</td>
+  </tr>
+  <tr>
+    <td>
+    	<br/>
+	    <table width="100%" height="100%" border="0" cellspacing="0" cellpadding="0">
+	      <tr>
+	        <td align="center" valign="top"><hr/></td>
+	      </tr>
+	      <tr>
+	        <td align="center" valign="middle" class="text">© 2012 hajuli, all rights reserved </td>
+	      </tr>
+	    </table>
+    </td>
+  </tr>
+</table>
+</center>
+</body>
+</html>

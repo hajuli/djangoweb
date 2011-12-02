@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title_descn %}
+在线收藏夹
+{% endblock %}
+
+{% block ext_js_head_inc %}
+<script language="javascript" src="/favorite/site-media/script/window_popup.js"></script>
+{% endblock %}
+
+{% block ext_js_head %}
+	var g_mouse_on = "";
+	function add_favorites(url)
+	{
+		g_pop=new Popup({ contentType:1, isReloadOnClose:false, width:410, height:150});
+		g_pop.setContent("title","添加超链接");
+		g_pop.setContent("contentUrl", url);
+		g_pop.build();
+		g_pop.show();
+	}
+	function g_close_pop()
+	{
+		g_pop.close();
+		setTimeout("location.reload();", 50);
+	}
+	function on_mouse_over_href(lable_name)
+	{
+		g_mouse_on = lable_name;
+		//alert(lable_name);
+	}
+	function on_mouse_out_href()
+	{
+		//alert(g_mouse_on);
+		g_mouse_on = "";
+	}
+	function on_click_label(label_name, url_link)
+	{
+		//alert(url_link);
+		//window.open(url_link, "newwindow");
+	}
+	document.onkeyup = function(){ 
+		//document.body.innerHTML   +=   event.keyCode   + "：离开了 <br   \/>";
+		if ("" != g_mouse_on && 46 == event.keyCode)	// for del.
+		{
+			var url_del = "/favorite/favorites/delete?label_name=" + g_mouse_on;
+			//alert(url_del);
+			document.URL= url_del;
+			//window.open(url_del, "newwindow");
+			//alert(url_del);
+		}
+	}; 
+{% endblock %} 
+{% block main %}
+<table>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td align="center">
+			<a href = "http://hi.baidu.com/momoxiangni" title="伤心小子" target="_blank">伤心小子-百度空间</a>&nbsp;
+			<a href = "http://www.cnbeta.com/" title="cnbeta" target="_blank">cnbeta</a>&nbsp;
+			<a href = "http://nba.tom.com/" title="nba中文官网" target="_blank">nba中文官网</a>&nbsp;
+			<a href = "http://www.youku.com/" title="优酷" target="_blank">优酷首页</a>&nbsp;
+			<a href = "http://www.cnitblog.com/hajuli/" title="it博客园" target="_blank">伤心小子-it博客园</a>&nbsp;
+			<a href = "http://news.163.com/" title="网易新闻" target="_blank">网易新闻</a>&nbsp;
+			
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<a href = "http://www.hao123.com/" title="hao123" target="_blank">hao123</a>&nbsp;
+			<a href = "http://www.google.cn/" title="google" target="_blank">Google搜索</a>&nbsp;
+			<a href = "http://code.google.com/p/walle/" title="walle" target="_blank">walle-project</a>&nbsp;
+			<a href = "http://code.google.com/p/xpchess/" title="xpchess" target="_blank">xpchess-project</a>&nbsp;
+			<a href = "http://code.google.com/p/djangoweb/" title="djangoweb" target="_blank">djangoweb-project</a>&nbsp;
+			<a href = "http://code.google.com/intl/zh-CN/appengine/" title="appengine" target="_blank">Google appengine</a>&nbsp;
+		</td>
+	</tr>
+	<tr><td align="center">
+		<table style="width:840px;">
+			<tr align="left">
+				{%for d_i in datas%}
+					<td align="left" style="width:140px;">
+						<a href="{{d_i.value.url_path}}" target="_blank" 
+							onMouseOver="on_mouse_over_href('{{d_i.value.label_name}}');" 
+							 onMouseOut="on_mouse_out_href();"  
+							 onclick="on_click_label('{{d_i.value.label_name}}', '{{d_i.value.url_path}}');" >{{d_i.value.label_name}}</a>
+					</td>
+					{%ifequal "5" d_i.index %}
+						</tr><tr align="left">
+					{%endifequal%}
+				{%endfor%}
+			</tr>
+		</table>
+	</td></tr>
+	<tr align="center">
+		<td><img src="/favorite/site-media/images/dingqilai.jpg" alt="ding" title="titletext" /></td>
+	</tr>
+	<tr align="center">
+		<td >
+		<input type="button" value="添加超链" onclick="add_favorites('/favorite/favorites/add/')"/>
+		</td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+</table>
+{% endblock %}
