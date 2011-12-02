@@ -6,6 +6,6 @@ api_version: 1
 handlers:
 - url: /favorite/site-media
   static_dir: media
-  
+
 - url: .*
   script: ej_start.py
